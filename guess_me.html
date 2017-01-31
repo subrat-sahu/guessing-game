@@ -3,6 +3,46 @@
 <title>Guess me!</title>
 </head>
 <body onload="do_game()">
-<script src="jsgame.js">
+<script >
+var a;
+var b;
+var c;
+var f=false;
+
+
+var g=0;var h;
+    for(h=0;h<5;h++){function do_game(){
+	var rand=Math.random()*100;
+	var randint=Math.floor(rand);
+	a=randint+1;
+	while(!f)
+	{  
+   b=prompt("I am thinking of a number "+" in the range 1 to 100.\n\n"+"What is the Number?");
+   c=parseInt(b);
+   g++;
+   f=check_guess();
+   
+   }
+}
+
+function check_guess(){
+	if(isNaN(c)){
+		alert("Enter a number bro!")
+		return false
+	}
+	if(c<1||c>100){
+	alert("Enter number in range");
+	return false}
+	if(c>a){
+	alert("your Number is larger")
+	return false}
+	if(c<a){
+	alert("your number is smaller")
+	return false}
+	alert("you got it the number was "+a+"\n\n"
+	+"it took you "+g+" guesses to guess the correct number!")
+	return true;
+}
+	}
 </script>
 </body></html>
